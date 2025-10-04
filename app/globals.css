@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+
+/* we can use dark:text-etc, neon:text-etc, */
+/* hooks > (not needed)*/
+/* components > Theme switcher */
+/* taliwing.config */
+/* for flickering will install next-themes for folder providers >
+which will wrap the children in the layout */
+
+
+
+@layer base {
+
+  :root {
+    --background: #000000;
+    --foreground: #fffffff8; 
+    --primary: #B5B5B5;
+    --secondary: #7C7C7C;
+    --accent1: #17D9FF;
+    --accent2: #1770FF;
+    --accent3: #9046D9;
+
+
+  }
+
+  .dark {
+    --background: #000000;
+    --foreground: #ffffff; 
+    --primary: #B5B5B5;
+    --secondary: #7C7C7C;
+    --accent1: #17D9FF;
+    --accent2: #1770FF;
+    --accent3: #9046D9;
+
+  }
+
+  .neon {
+    --background: #171717;
+    --foreground: #fffffff8; 
+    --primary: #B5B5B5;
+    --secondary: #7C7C7C;
+    --accent1: #17D9FF;
+    --accent2: #1770FF;
+    --accent3: #9046D9;
+
+
+  }
+
+  body {
+    @apply bg-[#000000] text-[#fffffff8]
+  }
+
+}
+
+
+/* Fonts ////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.Montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.Poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+.Heading1 {
+  @apply text-6xl md1:text-8xl xl:text-[7rem] Montserrat font-medium tracking-tighter
+}
+
+.Heading2 {
+  @apply text-5xl md1:text-6xl xl:text-[5rem] Montserrat font-light
+}
+
+.Heading3 {
+  @apply text-5xl md2:text-6xl xl:text-7xl Montserrat font-light
+}
+
+
+.Paragraph1 {
+  @apply text-sm md1:text-xl font-extralight Poppins
+}
+
+.Paragraph2 {
+  @apply text-base md:text-base font-extralight Poppins
+}
+
+/* used for flow cards */
+.Paragraph3 {
+  @apply text-xs md:text-sm md2:text-base Poppins
+}
+
+
+.ButtonText {
+  @apply text-base md2:text-lg font-medium Poppins
+}
+
+/* media screen landscape and width less than 900 px and height less than 600 px */
+@media (orientation: landscape) and (max-width: 1024px) and (max-height: 500px) {
+  .Heading1 {
+    @apply text-5xl
+  }
+  .Heading2 {
+    @apply text-3xl
+  }
+  .Heading3 {
+    @apply text-3xl
+  }
+  .Paragraph1 {
+    @apply text-sm
+  }
+  .Paragraph2 {
+    @apply text-sm
+  }
+  .Paragraph3 {
+    @apply text-sm
+  }
+  .mainButton, .ButtonText {
+    @apply text-xs px-2 py-1
+  }
+  .gradientButton {
+    @apply h-[30px]
+  }
+  .gradientButton svg {
+    @apply w-4 h-4
+  }
+  .brandSlider {
+    @apply bottom-[10px] !important
+  }
+  #contact__form {
+    @apply flex-row flex-wrap !important
+  }
+  #contact__form .textArea_container {
+    @apply flex-1 h-auto
+  }
+  .about_cards_container {
+    @apply grid-cols-2
+  }
+  #containerThreeD {
+    @apply absolute pl-[5rem] pt-[2.5rem]
+  }
+  .heroButtons_wrapper {
+    @apply max-w-[400px]
+  }
+  #hero_text1 {
+    @apply flex-row
+  }
+}
+
+/* Section 2 ////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+.floating-left-static {
+  transform: perspective(800px) rotateY(-0deg) rotateX(7deg);
+  position: relative;
+}
+  
+
+.servicesCard {
+  @apply w-[250px] h-[250px] p-6 rounded-lg shadow-md transition-opacity duration-500
+  bg-[rgba(255,255,255,0.07)] backdrop-blur-lg
+  border border-[rgba(255,255,255,0.1)] cursor-pointer
+}
+
+
+  /* Service Cards Styling */
+.servicesCard {
+  @apply w-[250px] h-[250px] p-6 border rounded-lg shadow-md transition-colors duration-[1500ms] ease-in-out;
+}
+
+/* Activated classes */
+.servicesCardActivated {
+  @apply border-accent shadow-accent;
+}
+
+.text-accent {
+  @apply text-[#17D9FF];
+}
+
+.shadow-accent {
+  @apply shadow-[0_4px_20px_rgba(54,163,228,0.3)];
+}
+
+.bg-accent {
+  @apply bg-[#36a3e4];
+}
+
+.border-accent {
+  @apply border-[#36a3e4];
+}
+
+/* Text classes */
+.servicesCard p {
+  @apply text-white/50
+}
+
+.cardHeading {
+  @apply text-2xl font-bold mb-4 transition-colors duration-500 ease-in-out;
+}
+
+/* Perspective effect */
+.servicesCard {
+  @apply p-6 border rounded-lg shadow-md transition-all duration-300 ease-in-out;
+  transform: perspective(800px) rotateX(0) rotateY(0) translateZ(0);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  will-change: transform;
+}`
+
+.servicesCard:hover {
+  @apply bg-[rgba(23,216,255,0.35)] border-[rgba(23,216,255,0.35)]
+}
+
+.servicesCard:hover {
+  transform: perspective(800px) rotateX(0deg) rotateY(0) translateZ(50px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.perspective-1000px {
+  perspective: 1000px;
+} 
+
+/* Section 3 ////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.border_neon1 {
+  box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem #17D9FF,
+            0 0 0.8rem #17D9FF,
+            0 0 2.8rem #17D9FF,
+            inset 0 0 1.3rem #17D9FF; 
+  border-color: #17D9FF;
+
+}
+
+.rotate360 {
+    
+  animation: rotateAnimation 30s linear infinite;
+  will-change: transform; 
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cardHeading2 {
+  @apply text-[1.5rem] md2:text-[min(40px,8vw)]
+} 
+
+
+/* Section 4 ////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.glass_bg2 {
+  background: rgba(0, 0, 0, 0.664);
+/* border-radius: 16px; */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.gradient_text {
+  background: -webkit-linear-gradient(
+    
+  0deg, 
+  
+  #9046D9
+  
+  0%, 
+  
+  #17D9FF
+
+
+  100%
+  );  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Section 5 ////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* Silver gradient star effect - without border */
+.star-shine {
+  fill: url(#silver-gradient);
+  stroke: url(#silver-gradient);
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+}
+
+
+/* Section 6 ////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.FormLabel {
+  @apply w-full text-start text-white text-xl
+}
+
+/* outline-none focus:outline-2 focus:outline-offset-3 */
+
+.FormInput {
+  @apply
+  focus:outline-[#17d8ff00]
+  caret-[#17d8ff]
+  placeholder-[#64646479]
+  text-[#ffffff]
+  border border-l-0 border-r-0 border-t-0
+  border-b-[#505050]
+
+  bg-[rgba(255,255,255,0.03)]
+  px-2
+}

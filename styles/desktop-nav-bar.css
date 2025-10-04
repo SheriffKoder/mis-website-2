@@ -1,0 +1,66 @@
+.main-tool-bar {
+    transition: ease 0.4s;
+  }
+  .navShow {
+    margin-top: -100px;
+  }
+  
+  /* Hover on nav links */
+  .ActiveNavLink::after {
+    content: "";
+  
+    width: 3px;
+    height: 2px;
+    background-color: #ffffff;
+    position: absolute;
+    border-radius: 50%;
+    bottom: -0.75rem;
+    left: 50%;
+    transform: scale(0) translateX(-50%);
+    transition: all 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+  
+    /* neon */
+    box-shadow:  0 0 1px #17D9FF,
+    0 0 4px #17D9FF;
+  
+  }
+  
+  .ActiveNavLink:hover::after {
+    content: "";
+  
+    width: 40px;
+    height: 2px;
+    background-color: #17D9FF;
+    position: absolute;
+    /* border-radius: 50%; */
+    bottom: -0.75rem;
+    left: 50%;
+    transform: scale(0) translateX(-50%);
+    transition: all 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+  
+    transform: scale(1) translateX(-50%);
+    
+  
+  
+  }
+  
+  .active::after {
+    content: "";
+  
+    width: 40px;
+    height: 2px;
+    background-color: #ffffff;
+    position: absolute;
+    /* border-radius: 50%; */
+    bottom: -0.75rem;
+    left: 50%;
+    transform: scale(0) translateX(-50%);
+    transition: all 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+  
+    transform: scale(1) translateX(-50%);
+      /* neon */
+      box-shadow:  0 0 1px #ffffff,
+      0 0 4px #ffffff;
+  
+  
+  }

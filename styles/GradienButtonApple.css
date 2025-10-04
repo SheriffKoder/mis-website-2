@@ -1,0 +1,125 @@
+/* ////////////////////////////////////////////////////////////////////// */
+.GradBorderButton_wrapper {
+
+    position: relative;
+  
+    width: 4.5rem;
+    height: 2.9rem;
+  
+    border-radius: 10px;
+  
+    background-color: black;
+    /* padding: 20px; */
+    /* font-size: 1.5rem; */
+  
+  
+  
+  }
+  
+  .GradBorderButton {
+  
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+  
+    background: linear-gradient(-90deg, #007cf0, #00dfd8, #ff0080, #007cf0);
+    background-size: 400% 100%;
+    animation: AppleGradButton_anim 8s ease-in-out infinite;
+  
+    border-radius: inherit;
+  }
+  
+  
+  @keyframes AppleGradButton_anim {
+    50% {
+        background-position: 140% 50%;
+        transform: skew(-2deg);
+    }
+  }
+  
+  
+  .GradBorderButton::before {
+    content: "";
+    position: absolute;
+    background-size: inherit;
+    background-image: inherit;
+    animation: inherit;
+    left: 0;
+    right: 0;
+    top: 1px;
+    height: 100%;
+    filter: blur(.5rem);
+  }
+  
+  .GradBorderButton_text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* border: 1px solid wheat; */
+    height: 100%;
+    width: 100%;
+  
+    /* font-size: 1em; */
+    /* padding: 0px 10px; */
+    /* padding-top: 3px; */
+  
+    /* background-color: black; */
+    /* border-radius: 9px; */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block; */
+    transition: all 0.5s linear;
+  }
+  
+  .GradBorderButton_text:hover {
+    box-shadow: 0 2px 30px rgba(255, 255, 255, 0.5);
+  }
+  
+  
+  
+  .GradBorderButton2 {
+  
+    position: absolute;
+    height: 102%;
+    width: 102%;
+    top: -3px;
+    left: -4px;
+  
+    background: linear-gradient(-90deg, #007cf0, #00dfd8, #ff0080, #007cf0);
+    background-size: 400% 100%;
+    animation: AppleGradButton_anim2 8s ease-in-out infinite;
+  
+    border-radius: 17px;
+  }
+  
+  
+  @keyframes AppleGradButton_anim2 {
+    50% {
+        background-position: 140% 50%;
+        transform: skew(-0deg);
+    }
+  }
+  
+  .GradBorderButton2::before {
+    content: "";
+    position: absolute;
+    background-size: inherit;
+    background-image: inherit;
+    animation: inherit;
+    left: 0;
+    right: 0;
+    top: 1px;
+    height: 100%;
+    filter: blur(.5rem);
+  }
+  

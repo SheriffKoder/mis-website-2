@@ -1,0 +1,79 @@
+
+/* Update the div scrollbar styles */
+/* div.content-wrapper::-webkit-scrollbar {...}
+div.content-wrapper::-webkit-scrollbar-thumb {...}
+div.content-wrapper::-webkit-scrollbar-track {...} */
+
+/* Restore the scrollbar styles */
+div.scroll-content::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  div.scroll-content::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #17D9FF;
+  }
+  
+  div.scroll-content::-webkit-scrollbar-track {
+    border-radius: 10px;
+    margin: 0;
+    background-color: #000000;
+  }
+  
+  /* Custom scrollbar styles */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #000000;
+    border-radius: 10px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #17D9FF;
+    border-radius: 10px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #12adcc;
+  }
+  
+  /* You can remove the previous scroll-content scrollbar styles */
+  
+  /* Add these minimal scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #17D9FF;
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #12adcc;
+  }
+  
+  /* For Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #17D9FF transparent;
+  }
+  
+  /* Hide number input spinners */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* For Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
