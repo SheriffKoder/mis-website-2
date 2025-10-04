@@ -2,7 +2,8 @@
 
 import Button from "@/components/ui/Button";
 import React, { useState } from "react"
-import { ChangeEventHandler, FormEventHandler } from "react";
+import { ChangeEventHandler } from "react";
+// import { ChangeEventHandler, FormEventHandler } from "react";
 
 
 const Form = () => {
@@ -31,26 +32,29 @@ const Form = () => {
 
 
   //handle the inquiry submission
-  const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
-    e.preventDefault();
+  // const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
+  //   e.preventDefault();
 
-    setLoading(true);
+  //   setLoading(true);
 
-    const res = await fetch("/api/mail", {
-      method: "POST",
-      body: JSON.stringify(emailBody),
+  //   const res = await fetch("/api/mail", {
+  //     method: "POST",
+  //     body: JSON.stringify(emailBody),
 
-    }).then((res) => res.json());
-    console.log(res);
+  //   }).then((res) => res.json());
+  //   console.log(res);
 
-    setLoading(false);
-    setSuccess(true);
+  //   setLoading(false);
+  //   setSuccess(true);
 
-  }
+  // }
 
   const consoleHandleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // console.log("Form submitted");
+    setLoading(true);
+    setSuccess(true);
+    setLoading(false);
     alert("This is a demo version, the form should submit in this stage.");
   }
 

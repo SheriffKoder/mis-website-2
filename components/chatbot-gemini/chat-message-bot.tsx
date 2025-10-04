@@ -1,4 +1,3 @@
-import { BotIcon } from 'lucide-react'
 import React from 'react'
 import { ChatMessageType } from './chatbot-container';
 import Image from 'next/image';

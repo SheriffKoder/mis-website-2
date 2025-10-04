@@ -1,7 +1,7 @@
 "use client"
 
 import { ChevronDown, File, FileX2, Paperclip, Send, Smile, X } from 'lucide-react'
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState } from 'react'
 import { constants } from "@/data/chatbot-text";
 import { ChatMessageType } from './chatbot-container';
 import data from '@emoji-mart/data'
@@ -220,7 +220,7 @@ const ChatForm = ({ chatHistory, setChatHistory, generateBotResponse, isBusy }: 
     // Manages emoji picker and selection
     ///////////////////////////////////////////////////////////
 
-    const handleEmojiSelect = (emoji: any) => {
+    const handleEmojiSelect = (emoji: { native: string }) => {
         if (inputRef.current) {
             inputRef.current.value += emoji.native;
         }

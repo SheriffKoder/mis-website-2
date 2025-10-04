@@ -2,11 +2,11 @@
 
 import React, { useState, useRef, useEffect } from 'react'
 import { companyInfo, constants } from "@/data/chatbot-text";
-import { ChevronDown, MessagesSquare, BotIcon, X } from "lucide-react";
+import { ChevronDown, MessagesSquare, X } from "lucide-react";
 import ChatForm from './chatbot-form';
 import ChatUserMessage from './chat-message-user';
 import ChatBotMessage from './chat-message-bot';
-import { GoogleGenAI, Content, Part } from "@google/genai";
+import { GoogleGenAI, Part } from "@google/genai";
 import "@/styles/chatbot.css"
 import Image from 'next/image';
 
@@ -223,7 +223,7 @@ const ChatbotContainer = () => {
                 </div>
 
                 {/* map through the chat history and render the messages depending on the role for styling */}
-                {chatHistory.map((message, index) => (
+                {chatHistory.map((message) => (
                     message.role === "user" ? (
                         <ChatUserMessage message={message} key={message.id} />
                     ) : (
